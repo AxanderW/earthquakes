@@ -26,7 +26,7 @@ The output is a visualization of an earthquake data set. A second data set on th
 
 - - -
 
-## Note to user : Please insert API Key in config.py file in order to run this program.
+## Note to user : Please insert API Key in config.js file in order to run this program.
 
 - - -
 
