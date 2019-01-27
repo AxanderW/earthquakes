@@ -8,9 +8,16 @@ d3.json(queryUrl, function(data) {
     console.log(data);
   });
 
-
 function createFeatures(earthquakeData){
     
+    function getColor(d){
+        return d > 5 ? '#ff471a' :
+        d > 4  ? '#ff8000' :
+        d > 3  ? '#ffa64d' :
+        d > 2  ? '#ffe066' :
+        d > 1   ? '#ddff99':
+        "#00e600";
+    }; //end getColor
 
     function makeCircles(feature, location){
         var radius = feature.properties.mag;
@@ -81,10 +88,16 @@ function createMap(earthquake){
         center: [
           37.09, -95.71
         ],
-        zoom: 5,
-        layers: [satellitemap,earthquake,darkmap,lightmap]
+        zoom: 2,
+        layers: [satellitemap,earthquake]
       });
 
+    L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
+    }).addTo(myMap);
+
+
+    // Set up the legend
 
 
     
